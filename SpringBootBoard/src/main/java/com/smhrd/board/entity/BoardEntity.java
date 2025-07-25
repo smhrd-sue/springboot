@@ -41,7 +41,6 @@ public class BoardEntity {
 	// DB서버에 직접적으로 이미지와 같은 파일을 저장 하지 않음 
 	//이미지는 서버에 저장 해당 서버의 주소를 DB에 저장 
 	
-
 	@Column(nullable=false, updatable = false) // db에 저장시 insert는 가능하나 update는 불가능
 	private LocalDateTime writeDay;
 	
