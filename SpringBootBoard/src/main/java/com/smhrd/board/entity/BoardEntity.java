@@ -1,6 +1,7 @@
 package com.smhrd.board.entity;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.CreatedDate;
 
@@ -40,16 +41,16 @@ public class BoardEntity {
 	// DB서버에 직접적으로 이미지와 같은 파일을 저장 하지 않음 
 	//이미지는 서버에 저장 해당 서버의 주소를 DB에 저장 
 	
-	@CreatedDate
-	@Column(updatable = false, columnDefinition="default now()") // db에 저장시 insert는 가능하나 update는 불가능
-	private String writeDay;
+
+	@Column(nullable=false, updatable = false) // db에 저장시 insert는 가능하나 update는 불가능
+	private LocalDateTime writeDay;
 	
-//	// 글 작성 시 자동으로 writeDay가 입력 되도록 코드 작성
-//	//entity가 생성 될 때 실행하는 코드 
-//	@PrePersist
-//	protected void onCreate() {
-//		this.writeDay = LocalDate.now();
-//	}
+	// 글 작성 시 자동으로 writeDay가 입력 되도록 코드 작성
+	//entity가 생성 될 때 실행하는 코드 
+	@PrePersist
+	protected void onCreate() {
+		this.writeDay = LocalDateTime.now();
+	}
 
 	
 	
