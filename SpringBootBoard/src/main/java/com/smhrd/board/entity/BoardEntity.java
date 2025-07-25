@@ -2,6 +2,8 @@ package com.smhrd.board.entity;
 
 import java.time.LocalDate;
 
+import org.springframework.data.annotation.CreatedDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,8 +40,9 @@ public class BoardEntity {
 	// DB서버에 직접적으로 이미지와 같은 파일을 저장 하지 않음 
 	//이미지는 서버에 저장 해당 서버의 주소를 DB에 저장 
 	
+	@CreatedDate
 	@Column(updatable = false, columnDefinition="default now()") // db에 저장시 insert는 가능하나 update는 불가능
-	private LocalDate writeDay;
+	private String writeDay;
 	
 //	// 글 작성 시 자동으로 writeDay가 입력 되도록 코드 작성
 //	//entity가 생성 될 때 실행하는 코드 
