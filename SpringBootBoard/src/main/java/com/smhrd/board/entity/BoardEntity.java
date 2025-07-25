@@ -41,12 +41,12 @@ public class BoardEntity {
 	@Column(nullable = false, updatable = false, columnDefinition="default now()") // db에 저장시 insert는 가능하나 update는 불가능
 	private LocalDate writeDay;
 	
-	// 글 작성 시 자동으로 writeDay가 입력 되도록 코드 작성
-	//entity가 생성 될 때 실행하는 코드 
-	@PrePersist
-	protected void onCreate() {
-		this.writeDay = LocalDate.now();
-	}
+//	// 글 작성 시 자동으로 writeDay가 입력 되도록 코드 작성
+//	//entity가 생성 될 때 실행하는 코드 
+//	@PrePersist
+//	protected void onCreate() {
+//		this.writeDay = LocalDate.now();
+//	}
 
 	
 	
