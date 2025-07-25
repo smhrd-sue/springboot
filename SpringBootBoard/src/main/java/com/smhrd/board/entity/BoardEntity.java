@@ -38,7 +38,7 @@ public class BoardEntity {
 	// DB서버에 직접적으로 이미지와 같은 파일을 저장 하지 않음 
 	//이미지는 서버에 저장 해당 서버의 주소를 DB에 저장 
 	
-	@Column(nullable = false, updatable = false, columnDefinition="default now()") // db에 저장시 insert는 가능하나 update는 불가능
+	@Column(updatable = false, columnDefinition="default now()") // db에 저장시 insert는 가능하나 update는 불가능
 	private LocalDate writeDay;
 	
 //	// 글 작성 시 자동으로 writeDay가 입력 되도록 코드 작성
